@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiEstudiantes.Models"
+             x:Class="MauiEstudiantes.Views.vEstudiante"
+             Title="vEstudiante"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="Semana 6: Servicios web - Estudiante"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="listaEstudiante"
+                        SelectionMode="Single"
+                        SelectionChanged="listaEstudiante_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Estudiante">
+                    <Grid ColumnDefinitions="80,*,*,60" Padding="5">
+                        <Label Text="{Binding codigo}" Grid.Column="0"/>
+                        <Label Text="{Binding nombre}" Grid.Column="1"/>
+                        <Label Text="{Binding apellido}" Grid.Column="2"/>
+                        <Label Text="{Binding edad}" Grid.Column="3"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button x:Name="btnAgregarEstudiante"
+                Text="Agregar Estudiante"
+                BackgroundColor="#6200EE"
+                TextColor="White"
+                Clicked="btnAgregarEstudiante_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

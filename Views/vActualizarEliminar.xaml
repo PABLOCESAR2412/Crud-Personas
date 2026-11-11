@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiEstudiantes.Views.vActualizarEliminar"
+             Title="vActualizarEliminar"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <Label Text="ACTUALIZAR - ELIMINAR ESTUDIANTE"
+               VerticalOptions="Center"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Grid RowSpacing="15" ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="CODIGO"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtCodigo"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   IsReadOnly="True"
+                   Placeholder="Ingresa el codigo"/>
+
+            <Label Text="NOMBRE"
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtNombre"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Placeholder="Modifica nombre"/>
+
+            <Label Text="APELLIDO"
+                   Grid.Row="2"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtApellido"
+                   Grid.Row="2"
+                   Grid.Column="1"
+                   Placeholder="Modifica APELLIDO"/>
+
+            <Label Text="EDAD"
+                   Grid.Row="3"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtEdad"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Placeholder="Modifica la edad"
+                   Keyboard="Numeric"/>
+        </Grid>
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+            <Button Grid.Column="0"
+                    x:Name="btnActualizar"
+                    Text="Actualizar"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"
+                    Clicked="btnActualizar_Clicked"/>
+            <Button Grid.Column="1"
+                    x:Name="btnEliminar"
+                    Text="Eliminar"
+                    BackgroundColor="#DC2626"
+                    TextColor="White"
+                    Clicked="btnEliminar_Clicked"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
